@@ -1,0 +1,727 @@
+---
+title: "**Striking it Free? Organized Labor and the Success of Civil Resistance Movements**"
+author: "Charles Butcher,         Elvira Bobekova,        John Gray,       Liesel Mitchell."
+date: "07 October 2014"
+output: pdf_document
+---
+
+# Abstract
+
+Abstract here
+
+
+
+
+_______
+
+\pagebreak
+
+# **Introduction**
+
+Some of the deadliest civil wars of the 20th century have emerged in the wake of failed protest movements, including the Guatemalan civil war, the Salvadorian civil war, the independence war in Mozambique, and La Violencia in Colombia in 1948 [^2]. More recently, the war in Syria has now cost more than 200,000 lives, and has spread into Iraq, precipitating a genocidal wave of violence against Christians and ethnic minorities. Moreover, some nonviolent movements result in robust post-conflict democracies, while other can spawn continued periods of autocracy and repression as in Iran (1979) and more recently in Egypt (2013-2014). Understanding why some civil resistance movements succeed, and others fail, and why some result in democracies while other do no is, therefore, a crucial question to understanding the contours of contemporary international security. This paper seeks to understand the success of nonviolent protest movements and the prospects for post-conflict democratization. We build on the work of Schock (2005) and Chenoweth and Stephan (2011), whilst also incorporating insights from bargaining theory to build an argument that focuses on the role of national labor organizations. We argue that the participation of national labor organizations in nonviolent conflict increases the probability of government concessions being accepted by the opposition and the prospects for post conflict democracy. 
+
+[^2]: Footnote test
+
+```{r, echo=FALSE}
+setwd("~/Dropbox/Projects/Nonviolence/Industrial")
+navco.data <- read.csv("navcodata27092014.csv")
+scad.data <- read.csv("scad.day2.csv")
+```
+
+Our empirical analysis largely supports these claims. We examine campaign years from `r length(unique(navco.data$id))` nonviolent movements from 1946-2006 in the Nonviolent and Violent Campaigns and Outcomes Data (NAVCO) and campaign days from `r length(unique(scad.data$epid))` pro-democracy struggles in Africa from 1989-2012, based on the Social Conflict in Africa Dataset (SCAD). Regression models of 'strategic success', in the NAVCO data, and regime transitions in the SCAD data show that the participation of national labor organizations in nonviolent campaigns increases the probability of strategic success by `r s.out1$stats$"First Differences: E(Y|X1) - E(Y|X)"[1,1]` percentage points and are, on average 5 points higher on the polity2 scale, 2 years post-conflict. Our results also suggest that one of the causal mechanisms driving this result is increased participation, but there remains a strong residual effect, which we think reflects the ability of national trade unions to remain resilient under repression and overcome commitment problems. Our results also suggest that national trade unions make it substantially less likely that nonviolent campaigns will fail completely (i.e obtain no concessions from the government) and more likely that they will obtain 'full' success, with a small effect on mid-range concessions. These results are replicated in the campaign-day analysis, where we find that general strikes in pro-democracy movements in Africa substantially increases the likelihood  of regime transitions, and regime transitions towards democracy, in particular. Overall, the results of this study point to the importance of workers freedoms and structures that enable the formation of national trade union federations in the creation of democratic states. Our results support a number of studies that have emphasized the role of organized labor in creating and sustaining democratic transitions (Collier 1999). 
+
+
+# Existing Research
+
+The groundbreaking work of Chenoweth and Stephan (2011) and Stephan and Chenoweth (2008) suggested that violent tactics were less likely to remove dictators or achieve independence than were nonviolent tactics, and that regime transitions effected by nonviolent means are more likely to result in post-transition democracies. Gleditsch and Celestino (2013) and Ackerman and Karatackny (1995) also find that transitions to democracy are more likely when regimes are overthrown with mass, nonviolent tactics. It remains an open question, however, as to why some nonviolent movements succeed, while other nonviolent movements fail, and why some result in post-transition democracies, while others do not. These are important questions, as the failure of nonviolent movements has resulted in the onset of very severe civil wars, as is currently the case in Syria, and the failure to consolidate post-conflict democracy has ushered in new, dictatorial regimes, as has been the case in Egypt following the revolution of 2011.
+
+While Chenoweth and Stephan (2011) and Stephan and Chenoweth (2008) did not directly address the question of why some nonviolent movements succeed, but others fail, the two causal mechanisms driving the success of both violent and nonviolent campaigns - participation and security defections - are also likely drivers of the the success of nonviolent campaigns. Svensson and Lindgren's (2011) study found that civil resistance movements are less likely to succeed where there is high ethnic diversity and a disjunct in the religious or ethnic identity of the state and the insurgents. They also found that movements that challenge the 'vertical legitimacy' of the state are more likely to succeed than those that challenge the 'horizontal legitimacy'. In other words, movements that claim to represent and ethnic community or call for the autonomy or separation of a certain people, are less likely to succeed. While these studies are important steps forwards, there remains much to explain. While participation is likely to be a key driver of the success of civil resistance movements, what drives variance in participation rates across campaigns is yet to be explained. While we do not directly engage the question here, the same could also be said of security defections. Ethnic and communal divisions, and the nature of claim making against the state (which are likely to be closely related) are also important findings, but there remains much variance within anti-regime movements, or movements that do not engage notions of ethnic or communal identity. Why, for example, (would be good to have a couple of movements here that were close in proximity and time, but one failed and one succeeded - I have not included Syria because it also fits the ethnic difference model)
+
+Case-study research has also examined the outcomes of civil resistance campaigns. Kurt Schock (2005) examined successful unarmed insurrections in South Africa, the Philippines, Thailand and Nepal, and failures in China and Burma.  Schock (2005: xxiv) concluded that what he called ‘resilience’ and ‘leverage’ were critical drivers of success. This paper builds heavily on Schock’s theoretical framework and provides new, quantitative empirical tests of some of these concepts.   Sharon Nepstad examines six movements and concludes that (x). Wendy Pearlman looks at the Palestinian Intifada. Zunes et al, Ackerman and DuVall, Bartowski et al, Sharp (various). While these works ahve generated important theoretical mechanisms that motivate much of this study, the observable implications of these theories have not yet been tested with a large-N, cross national sample.   
+
+There are a number of areas that remain to be explored. We know that nonviolent campaigns are often coalitions of civil society actors while violent campaigns tend to coalesce around single groups (Celestino and Gleditsch 2013; Cederman, Wimmer and Min 2010). However, the types of social actors that become involved in civil resistance movements are varied and afford different mobilization and tactical opportunities, depending upon their social networks (Lichbach 1995; Schock 2005). Students, for example, often initiate or participate in protests movements but offer very different tactical opportunities and potential leverage than, say, the oil workers union in Nigeria or Iran. Religious groups may bring ‘moral’ leverage to a movement and mobilization opportunities, but they are unlikely to be able to economically hurt the regime through strikes. The social base of protests movements also likely influences their resilience under repression, and the probability of transition to civil war. Movements that do not have the support for labor groups, for example, may be less successful at using diffusion tactics, such as strikes (Schock 2005). As a result, they may be vulnerable to government repression, and reverting to violent tactics in these circumstances (Moore 1998). The case of the Muslim brotherhood in Egypt in 2013 may be instructive here (Chenoweth 2013).  
+
+There is also a large literature on organized labor and industrial relations. Most of this literature does not systematically deal with the question of why forms of protest succeed, and deal with the narrower area of bargaining over economic and workplace issues. Within political science and economics there are a handful of studies that look at the effectiveness of trade unions in collective action (Hamman, Johnston and Kelly, 2013). They find that strikes are more likely to be effective when there is unity between union confederations, and when directed at Centrist or Centre-Left political parties. The findings and theoretical approaches of these works are built upon in this paper, but these studies look primarily at the activities of organized labor in Europe or Western Democratic states, and tend to examine strikes in isolation from other forms of collective action. Many of the NTUs examined in this paper existed, or emerged, in highly autocratic contexts and in a context of varied forms of collective action and about issues that extended far beyond the workplace. As far as we are aware, there is no existing, empirical study of the impact of trade union participation (and strikes) on civil resistance movements.  
+
+In this paper we explore the role of national labor movements in driving the outcome of civil resistance campaigns – understood in terms of successfully achieving goals, most often, regime transitions. Below we present a theoretical framework that considers the nature of 'success' in nonviolent movements and the abstract factors that drive governments to offer concessions and opposition movements to accept them. These build heavily on past research. With Schock (2005) we argue that campaign success is driven by a movement's 'capabilities' determined by movement leverage and resilience. We also argue, however, that we are unlikely to see campaign success if the government and the opposition cannot overcome commitment problems, which should be relatively acute in nonviolent conflicts. As such, we make a theoretical contribution to the understanding of nonviolent conflict by considering the outcomes of nonviolent conflicts through a bargaining framework. Our theoretical discussion leads us to predict that nonviolent movements that attract the participation of NTUs, that is, organizations that articulate goals of workers rights, and claim to represent these interests without respect to economic sector or geographical region, are uniquely placed to offer increased capability in terms of leverage and resilience, and also enable movements to overcome commitment problems. In turn, this makes such movements more likely to succeed, in terms of attracting substantial government concessions, and/or effecting regime transitions. We also argue that the ability of national trade unions to punish government defection from any bargain (which may be with the military or the incumbent), combined with structural features incline NTUs towards democracy, making it more likely that the transitions that do occur will be towards democracy. 
+
+We test these arguments in three innovative ways. First we introduce new data on the participation of national labor movements in civil resistance campaigns from 1945-2006 and test their impact on campaign success and on the level of democracy 2 and 5 years after the end of conflict. Second we use the Social Conflict in Africa Dataset (SCAD; Salehyan and Hendrix 2012) to assess how nationwide strikes in peaceful pro-democracy movements affects the time until regime transitions, and democratic regime transitions.
+
+We make a number of contributions to the literature on nonviolent conflict and democratization. First, we test propositions contained in case-study based research linking leverage and resilience to success on more expansive sample of cases than exists in the extant literature. Second, we add theoretical nuance to the understanding of nonviolent conflict by situating it within a bargaining framework and considering the nature of capability, information and commitment in conflicts where one side does not rely heavily on organized violence. Finally, we begin the process of disaggregating the effects of different types of civil society actors on the success of nonviolent movements. Recent research in the field of violent conflict has made important steps forwards in this respect, by dis-aggregating the impacts that religious (Svensson 2012; there are many others) and ethnic actors (Cederman Wimmer and Min 2010, Fearon and Laitin 2003) have on the onset and outcomes of civil wars. This dissaggregation has not yet occurred in the quantitative study of nonviolent conflict, but given that nonviolent conflicts often involve many more types of social actors with a diversity of tactical strengths and weaknesses, this is an important a question to consider. 
+
+This paper proceeds in the following way. First, we outline our theoretical framework, conceptualizing 'success', capability, information and commitment in nonviolent conflict. This leads us to draw out, broadly, that leverage and resilience are key aspects of 'capability' in nonviolent conflict, with an emphasis on resilience. We also point out, however, that nonviolent conflicts are unlikely to end in success for the opposition if they cannot also overcome commitment problems, much like in violent conflict. We then link the participation of organized labor to increased leverage, resilience, and the ability to overcome these commitment problems. These discussions lead us to the hypotheses that the participation of national organized labor in nonviolent conflict increases the probability of opposition success, and increases the probability of post-conflict democratic transitions. The third section outlines our research design. The fourth section discusses the results of our quantitative analysis and the final section outlines the conclusions drawn from this study, implications for current research and some ideas for future research. 
+
+
+# Theoretical Framework
+
+## Conceptualizing the Success of Civil Resistance
+
+When we say that civil resistance movements succeed, what do we mean? There are a number of different dimensions of success that have been considered in the social movement literature, including factors such as the institutional strengthening of the movement, issue awareness and government concessions (reference). Here we focus on success in terms of the opposition achieving its stated goals, often by overthrowing governments, engendering democratization or creating regional autonomy. Success occurs when the government offers the opposition concessions that are close to the preferences of the opposition, and the opposition accepts that offer. The key theoretical questions that this paper engages with, then, are (1) under what circumstances is the government willing to offer substantial concessions to a nonviolent movement, and (2) under what conditions is the movement willing to accept the government's offer. We argue in the following section that nonviolent conflicts are akin to bargaining situations, and much of what has been learned about bargaining in violent conflict also applies to nonviolent conflict. More specifically, governments are willing to offer substantial concessions when they learn that the movement has substantial 'capabilities', especially in terms of the ability to neutralize the government's advantages in organized violence, and when the government and the opposition can overcome commitment problems.
+
+
+## Why Protest Movements Succeed - Bargaining and Nonviolent Conflict
+
+The Chenoweth and Stephan (2011) model of success in nonviolent campaigns centers on two key drivers – the level of participation, and the presence of security force defections. Mass, diverse participation allows campaigns to pull away the regime’s key pillars of support, survive and even grow under repression, and apply costly sanctions to the regime through strikes and boycotts. Secondly, security defections substantially increase the probability of campaign success as the government is less able to leverage its advantage in violent coercion. Both of these mechanisms depend upon an underlying theoretical model of nonviolent conflict. When enough social groups critical to the functioning of the regime publicly withdraw their support, the regime can no longer function, and affords concessions to the opposition. Naturally, a key institution is the military – when the military refuses to obey the regime’s orders, the state has lost its coercive capacity, pushing the regime to accept the movement’s demands. 
+
+This is very much like a bargaining model of conflict, which has been used to understand the outcomes and dynamics of violent conflicts. Bargaining models emphasize that violent conflict is costly and that belligerents have incentives to reach a negotiated settlement that reflects the predicted outcome of the conflict, that while avioding war's costs. These bargains, however, are unlikely to be struck where (a) belligerents cannot agree on who will win a conflict, or what the associated costs are likely to be, or (b) neither side can trust the other to uphold their side of the deal. Both mechanisms are closely tied to the notion of 'capability'. Information asymmetries arise when there is uncertainty over capabilities. Commitment problems arise when capabilities are expected to change in one sides favor, such that they no longer have incentives to uphold a deal. In violent conflict, capability is considered to be a function of the number of soldiers at the disposal of either side, technology, tactical ability, resolve and foreign support. Information about 'capabilities' in violent conflict is revealed through fighting, and, over time, an insurgency and a government do so until their expectation of the outcome of the conflict converges and a negotiated settlement is reached, or one side wins (Powell 2002; Walter 2009; Cunningham 2006, 2011; Butcher 2014). Where there are commitment problems, or effectively indivisible issues (but Powell x) then sides may continue fighting with full knowledge of the likely victor in continued combat. 
+
+In terms of bargaining, nonviolent conflicts are not fundamentally different. Bargaining is very common during unarmed insurrections (Hong Kong) and there is a long history of understanding some forms of mass collective action (especially strikes) as a reflection of bargaining failures. Continued conflict for the government and the opposition is costly (albeit less costly than for violent conflict), and both would, presumably, prefer a negotiated settlement that reflected the outcome of a conflict to continued protest and contention. Protesters, especially protest leaders, lose income and face the prospect of being imprisoned, or killed. Governments lose resources while citizens withdraw cooperation, face potential international and domestic opprobrium for using repression against demonstrators, and a period of increased risk of overthrow.  Governments and opposition movements should be more likely to reach settlements as they learn about each other's capability to impose costs, and make forecasts about the outcome of a conflict that converge. Even the resignation of a government is a 'bargain', albeit one that is heavily in favor of the opposition, although, in many of these situations the outcome reflects an implicit bargain between the military and protesters. One recent study suggests that in less than half of anti-regime nonviolent campaigns did the protest movement actually assume the position of head of state (Llewellyn 2014). Belligerents should also be more likely to reach settlements when the opposition believes that the government will follow through on any offer of concessions, and the movement can credibly commit to keep it's side of the bargain. We consider both of these mechanisms in turn - first, the nature of capability in nonviolent conflict and the ability of belligerents in nonviolent conflict to communicate their capability, then we examine factors that enable the government and opposition to make credible commitments as likely drivers of movement success. 
+
+## Information Assyemtries and 'Capability' in Nonviolent Conflict
+
+Nonviolent tactics draw upon different mechanisms to impose costs upon an adversary than violent conflict, and, therefore, 'capability' in nonviolent conflict cannot be understood in the same terms [^4]. Drawing on the work of Schock (2005) and Sharp (1973) the 'capability' of a nonviolent movement is a function of the 'leverage' of the movement and the 'resilience' of the movement. Each of these concepts and the main factors identified in existing literature that contribute to them are outlined below. 
+
+[^4]: Although there is overlap in terms of the numbers of participants\
+
+### *Leverage*
+
+Most key models of nonviolent action focus on the notion of leverage (Schock 2005; Chenoweth and Stephan 2011). This is the ability of protesters to impose costs upon the regime without restoring to physical violence. This is commonly understood as severing dependence relations between the state and the citizenry. These dependence relations can come in a number of forms, such as economic dependence, moral dependence, political legitimacy and external dependence. The withdrawal of US support from the Marcos regime in 1986 is an example where leverage was effectively utilized to obtain concessions from the regime (Marcos stepped down). The solidarity movement in Poland undermined the industrial base of the Polish economy through strike actions. A general strike in Togo in 1990 directly precipitated the government’s decision to allow a national conference on the issue of multiparty democracy. Chenoweth and Stephan’s model of ‘Why Civil Resistance Works’ centers heavily on the role of mass participation, and the leverage that this provides over regimes. 
+
+What causes leverage? What are some movements to be able to impose costs upon a regime, while others cannot? The leverage of a movement turns on it’s ability to attract the support and participation of sectors of society that the government is dependent upon.  Some sectors of society, or organizations, are more powerful than others when it comes to leverage and have greater 'capability' in nonviolent forms of contention. Organizations that are able to mobilize sections of the population that the government is dependent upon for revenue, for legitimacy, for the ability to use organized violence, or the ability to implement policy are sectors that might be considered ‘powerful’ in terms of leverage. The Nigeria Union of Petroleum and Natural Gas Workers (NUPENG), for example, is a powerful organization in terms of leverage, due to Nigeria’s dependence on oil exports for foreign exchange. Other organizations may exert substantial leverage due to an ability to mobilize a large number of people, that are collectively, important to the functioning of the regime. Some religious groups, such as the Catholic Church in the Philippines, have proven to posses this capability. Economically excluded ethnic groups, upon which the government is not dependent to sustain it’s rule, have lower levels of leverage, or lower levels of capability in nonviolent tactics, and thus find it hard to impose costs upon the government without resorting to physical violence.   
+
+### *Resilience*
+
+Nearly all major protest movements are met with government repression (Davenport 2004) [^3]. Even if a movement has substantial leverage, the government (in the initial stages) always maintains an advantage in the use of organized violence. Repression is designed to demobilize collection action, and if the movement is unable to continue collective action in the face of government repression, then it is likely to fail. A key part of the 'capability' of an unarmed insurrection, therefore, is the ability of the movement to survive (or deter) government repression. 
+
+[^3]: Only 12 campaign years out of (x) in the NAVCO 2.0 dataset did not face some form of government repression
+
+What causes resilience? What enables movements to survive and grow in the face of severe repression? Schock (2005) mentions three factors – a decentralized but coordinated organizational network, the ability to use a diversity of tactics, especially tactics of concentration (marches, demonstrations, etc) and tactics of dispersion (strikes, boycotts, stay-aways), and the ability to tactically innovate. In short, decentralization makes it difficult for the government to target the movement’s leadership and disrupt it’s organizational networks while coordination enables the movement to continue acts of collective action in this circumstance. The ability to use dispersion tactics would seem to be especially important. Dispersion tactics spread the campaign’s participants widely, making it difficult for the government to target a single center with violence (Burrowes 1998). Dispersion also makes it more likely that the government will have to use indiscriminate repression, which may increase the possibility of backfire (Francisco 2004). Additional mechanisms that may increase resistance are the ability to broadcast repression to  the uncommitted population and strong, pre-existing organizational networks with other social groups (Martin (x); Sutton, Butcher and Svensson 2014). 
+
+Thus, the higher the leverage and resilience of a nonviolent movement, the more 'capability' that it has to impose costs upon the government. As Mark Lichbach (1994) has observed, what emerges in cases of contentious politics is a contest over mobilization and collective action problems. Regime opponents seek to preserve and expand their own mobilization capabilities while undermining those of the government. Conversely, the government uses a combination of repression and concessions in an attempt to demobilize the opposition without conceding too much. Thus, many nonviolent conflicts approximate a classic bargaining situation. Both sides seek to communicate their ability to impose costs upon other and hope to obtain concession in return. As a result, we would expect, that as both the government learn about their respective capabilities to mobilize and demobilize the opposition and their expectations about the outcomes of the conflict converge, we would expect the conflict end with a negotiated settlement that reflects this projected outcome. Opposition success will be more likely when unarmed insurrections can communicate to the government that they have superior 'capabilities' in terms of leverage and resilience. Governments will be most likely to offer substantial concessions to the opposition when they learn of the movements ability to withdraw the support of key sectors of society, and survive government repression. 
+
+## Committment Problems and Democratization
+
+Bargaining theories also suggest that, even in a situation where both the government and the opposition learn about their capabilities they may not be able to come to a settlement if both sides do not believe each other's promises or factions within each side cannot commit to any intra-group distribution of resources that a deal might entail. In the context of nonviolent conflict, even though the government may promise to hold elections in the future, or to appoint members of the opposition to powerful positions of government, the opposition may not accept the concessions, fearing that the government will renege on the terms once the movement has demobilized. While demobilization in the context of civil war may be more risky for insurgent groups as they have to hand over weapons (a core part of their capability) accepting a government deal (or a deal with the military) still poses substantial risks to a nonviolent movement. They may have to reveal their leadership and, while the movement may keep mobilization networks in place, the very act of revealing information about capability in nonviolent conflict also involves revealing information about mobilization networks. The government or military may choose to repress these networks in any intervening period. A recent example may be in Egypt, where there is very little trust that the military government will hold free, competitive elections as initially promised. Commitment problems may also arise because factions of the movement do not believe that other factions will adhere to any intra-group distribution of resources that a deal may entail (Blattman and Miguel 2010). These intra-movement commitment problems may be acute in nonviolent movements that tend to aggregate multiple civil society actors.  One example may be the Tienanmen protests in China. Even though the Chinese government offered the students concessions that a substantial part of the movement was willing to accept, internal divisions within the movement, and, potentially, the fear that the government would not uphold its side of the bargain, led the protesters to reject the government’s offers. The movement was subsequently repressed and failed. Movements that believe that they are able to survive government repression in any interim period and believe that they will be able to continue to mobilize for collective action after agreeing to government concessions, are the least likely to experience commitment problems as they can hold the government to account in the post-conflict period. In addition, movements with few internal divisions should be less likely to experience intra-movement commitment problems. Nonviolent movements are often composed ‘civic-coalitions’, alliances of NGOs, trade unions, human rights activists, politicians and other interest groups. These groups are likely to have differing preferences for any government package of concessions. In and of itself this should make it hard to reach agreements, perhaps short of regime overthrow, because what might be acceptable to one part of the movement (legalizing trade unions and political parties, for example) may not be acceptable to another, potentially more radial group. The more diverse the preference and the greater number of veto groups within a coalition, the less likely an agreement is.
+
+In sum, we are most likely to see bargains in nonviolent conflict that reflect the preferences of the movement when they are able to communicate high capabilities in terms of leverage and resistance, and the government learns that it's capabilities in terms of the ability to use repression and buy off parts of the movement, are very limited. Settlements are also likely to occur when the opposition believes that it has the organizational capabilities for continued and powerful collective action if the government decides to renege on any deal that is struck. In the next section we argue that labor organizations and national labor organization in particular are uniquely placed to provide nonviolent movements with leverage and resilience and the ability to punish government defection from potential bargains. 
+
+## Labor Organizations, the Success of Unarmed Insurrections and Post Conflict Democratization
+
+In this section we argue that the participation of NTUs in civil resistance campaigns substantially increases both the leverage and the resilience of these movements, and enables opposition movements to overcome collective action problems. As such, we hypothesize that movements that are able to form, or attract the support of national labor organizations are the most likely to 'succeed', in the sense of being able to extract concessions from the government, and the most likely to engender post-conflict democratization. 
+
+
+### Defining Trade Union Movements
+
+Trade Unions can be thought of as legal institutions claiming to bargain for workers rights and social movements pushing for changes to laws or conditions that affect working people. Both ideas are encapsulated in the Oxford Dictionary of Economics' definition of a trade union as "An organization of employees, formed for the purpose of collective bargaining with employers over wages, hours, conditions of service, job security, and manning levels" (Black, Hashimzade and Myles 2012). Membership in trade unions is, theoretically open to all employees or wage earners, although the costs of membership, both in terms of the legality of forming trade unions, and, much more simply, membership costs, vary by context. Trade unions can exist where they are declared illegal by the state, so long as there remains continuous association between employees with the self-understood goal of improving conditions related to the workplace. Importantly for this paper, trade union movements do not have to exist prior to the onset of the resistance campaign, and may emerge (or re-emerge) during the movement. The formation of autonomous national trade unions is often an important development in nonviolent resistance campaigns. For example, Prodrepka (Support) emerged in 1989 in Bulgaria as an independent, national trade union, to compete with (and resist) the Communist state and the state-run Confederation of Independent Trade Unions of Bulgaria (Docherty and van der Velden 2012: 56). 
+
+Trade unions can represent single industries, certain skill areas or workers in general. In this paper we focus on 'national trade unions', or, organizations that claim to represent workers at the national level, irrespective of industry, skill, or geography. General Workers Unions and National Trade Union Federations fall into this category.  For example, the Beijing Autonomous Workers Federation, formed in the Tienanmen Square protest in 1989, does not count as a national trade union movement, due to it’s geographically limited membership (Schock 2005). Similarly, the Union Federation of Bolivian Mine Workers is not a national trade union, as its membership is linked to employment in mineral extraction, while the Bolivian Workers Central, which is a confederation of sectoral trade unions, does. Often there are competing national trade union movements, and there is no limit on the number of national trade union institutions that can be in existence in a state at a given point in time.
+
+### National Trade Unions, Movement Success and Post-Conflict Democratization
+
+We see three reasons why NTU participation in civil resistance should increase the probability of concessions being offered by the government, and those concessions being accepted by the opposition. These factors center on the increased leverage and resilience that NTUs bring to a nonviolent movement. In turn, this combination of factors allows the government and opposition to overcome commitment problems. We also think the unique combination of capability provided by NTUs and their aggregate preferences for democracy make it more likely that democratization will occur after the conflict.  
+
+First, movements with NTU participation bring increased leverage. NTUs are likely to have extensive capabilities to mobilize large numbers of people into collective action. This is due to the broad appeal of worker-related issues and that national trade unions often emerge from pre-existing, dense social networks that are crucial for high-risk mobilization. Membership to national, non-sectoral trade unions is also theoretically open to anyone in the working population, although in practice this probably applies mostly to the industrial and service sectors. This means these networks tend to be extensive, and spread across diverse geographical locations and social divides. Women, for example, are prominently reflected in trade unions, when compared to other types of social groups. This extensive membership and mobilization potential carries with it the potential to impose substantial costs upon the government. This is especially the case with NTUs where their mobilization base is also (often) closely integrated with the formal economy. From the perspective of the government this mobilization base is likely to be economically valuable, either through the goods that are produced by workers, the taxes that they pay, or the consumption of wage earners. In other words, the mobilization base of NTUs also leverages a dependency with the state. When NTUs participate in nonviolent conflict, we expect that they bring increased leverage not only through large numbers of participants, but through the withdrawing of resources important to the government. Few other social organizations have this combination of extensive mobilization potential and dependencies with the state. Religious organizations may be able to mobilize large numbers of people, for example, but these people are not necessarily important to the functioning of the state.   
+
+Second, movements with NTU participation should also be more resilient under repression. NTUs bring the possibility of effectively using dispersion tactics, such as strikes and stay-aways, that the government will find more difficult to repress (than concentration tactics, although trade unions also have the capability to use concentration tactics effectively through their mobilization potential). When NTUs use dispersion tactics they are likely to be effective as they continue to impose economic costs upon the government through the withdrawal of labor. Moreover, NTUs, even when they are fairly young, likely have a history of undertaking strike actions and collective dissent, and a pre-existing organizational structure that can facilitate the effective coordination of strikes. Thus, strikes coordinated by NTUs are more likely to be better organized and less susceptible to government counter-measures. The organizational infrastructure that NTUs brings is also likely to be decentralized as NTUs are often federations of smaller sectoral trade unions (with substantial geographic spread) making selective repression of the movement's leadership less effective. Given the ability of NTUs to effectively use both concentration and dispersion tactics, and their dense but decentralized organizational network, we expect that civil resistance movements with NTU participation have increased resilience.
+
+Regimes anticipate this. Governments are likely be cognizant of the mobilization potential of NTU movements, the broad appeal of workers issues, and the ability of collective dissent undertaken by organized labor to severely disrupt the regime. Governments are also likely aware of the ability of trade unions to survive repression and organize dispersion tactics that the regime will find costly to repress, with a substantial chance of backfire.  Autocratic regimes often suppress or ban trade unions, or prevent national trade union federations forming outside of government controlled institutions. When national trade unions become involved in nonviolent campaigns, this plays an important communicative role. As trade union movements publicly declare their support for an opposition movement and engage in collective action, the government should lower it’s estimate of the probability of defeating the campaign, or update its estimate of the costs and risks of repressing the campaign. As such, we should observe a higher likelihood of government concessions when trade unions enter the conflict. Thus, the entry of a national trade union into an unarmed insurrection on the side of the opposition should change perceptions of the balance of capabilities in favor of the opposition. 
+
+Third, NTU participation enables opposition movements to overcome commitment problems with the government. The capability of NTUs in terms of *both* leverage and resilience means that they can effectively act as a power-balancer in post-conflict bargaining situations. The mobilization potential, the disruptive potential and the ability to withstand repression enable union movements to impose costs upon governments that defect from any deal. The factors that enable NTUs to survive repression during a period of resistance also make it likely that they can withstand government attempts to violently renege on bargains. At least, the NTUs decentralized mobilization structures and leverage will remain in tact. More likely, NTU participation in civil resistance means that workers rights are likely to be a part of any post-conflict deal and the mobilization potential of NTUs may even expand during the post-conflict period, increasing their capabilities to nonviolently resist the state. This pattern, for example, is not obviously the case for other types of social groups. Religious group membership may be enhanced by religious freedoms, but this is not necessarily the case given the high personal costs of conversion. So too, temporary civic coalitions may be able to agree to overthrow the existing state, but may find that their mobilization potential actually declines after the conflict as these parties fragment. This belief, on behalf of the movement as a whole, that it is able to punish government defection from the agreement into the future may make it more likely to accept a package of government concessions in the first place. 
+
+The ability of national trade unions to continue collective action in the face of repression, and to overcome commitment problems also leads us to believe that national trade union participation does not only make regime transitions more likely, but transitions towards democracy more likely. As has been discussed in seminal works such as Collier (1999) and Ruschemeyer (199?) organized labor movements often have strong preferences for democratization, given the diverse political preferences of their support base. Although this does not disqualify trade unions from aligning themselves with autocratic governments, labor organizations appear to have played a critical role in numerous democratization movements, including in Africa (Bratton and van De Walle) and in Latin America (Collier 1999). It is the combination of preferences for institutional democracy and a powerful 'capability' to impose costs on post-conflict regimes that we expect movements that attract the participation of national labor organizations are also likely to result in post-conflict democracies. In the context where a national trade union has formed in the context of, or has joined, an unarmed insurrection, future regimes should find the costs of autocratization higher as they face the prospect of resistance from NTUs again. Such resistance will be difficult for the government to repress, and brings a real possibility of regime overthrow. By raising the costs of autocratization in the post-conflict period, the participation of national trade union movements should make post-conflict democratization more likely.  
+
+*Hypothesis 1 – The participation of National labor organizations increase the probability of movement success.* 
+
+*Hypothesis 1 – The participation of National labor organizations increases the chances of democratic regime transitions.* 
+
+# Research Design
+
+## Unit of Analysis
+
+We use two units of analysis in this paper. First we examine nonviolent campaign years in the NAVCO 2.0 data from 1946-2006. Second, we test our hypotheses on a more disaggregated dataset of `r length(unique(scad.data$epid))` pro-democracy movements and campaign days in Africa from 1990-2012. In both instances we a combination of logit and OLS regression analysis to estimate the likelihood that a movement succeeds at a given point in the campaign, and their democracy score 2 and 5 years after the observation period.  
+
+The sample of pro-democracy movements in Africa was created from the SCAD dataset. The method was as follows. First, only events in the dataset that were identified as being targeted against the central government, with goals of democracy and human rights were selected. Second, only events of nonviolent contention (demonstrations and strikes) were retained. Third, a ‘campaign’ was created where these events of nonviolent contention with similar goals were less than 6 months apart. Thus, a campaign begins on the day that an event of collective action targeted at the central government over issues of democracy and human rights first occurs, and then ends on the date of the last event, after which no similar event occurs in the following six months. This method has a number of advantages and drawbacks. The main advantage is that we are likely creating a full sample of pro-democracy movements in Africa for this period, as we are not selecting on campaign size, or duration. Thus our sample includes single-day movements that fizzle out and very long campaigns, such as those in Egypt. The second main advantage is that we also do not select on claim-making. The NAVCO dataset, for example, only includes campaigns that articulate maximalist goals. The public declaration of anti-regime goals, however, is a strategic act, and only the most capable movements are likely to make such claims, given that doing so will likely attract severe government repression. Our dataset includes campaigns that articulate goals related to human rights, that are presumably at risk of escalating to anti-regime struggles but that may not escalate to the situation of anti-regime claim making because of structural factors, including an inability to attract the participation of NTUs. The main downside of creating the dataset in this way is that we potentially include movements with moderate reformist goals that may not be comparable with the maximalist campaigns in NAVCO. We, however, think, that, given the strategic nature of claim making against the nature, it is better to include these movements than to exclude them. We then used this dataset to create a campaign-day dataset with an observation for every day that the movement was active. In total this method results in `r length(unique(scad.data$epid))` unique episodes and `r nrow(scad.data)` campaign-day observations. The longest of these movements lasts `r max(scad.data$time)` days (`r scad.data$ccode[max(scad.data$time)]`). The shortest lasts for 1 day. 
+
+## Campaign Success
+
+Campaign success is a situation where a movement extracted significant concessions from the government. For the NAVCO analysis we operationalize campaign success as a score of more than 3 on the ‘progress’ scale (see Chenoweth and Lewis 2013b: p). To further disaggregate the results we also run a test using the 'progress' variable. To estimate the longer term impact on democratization we use the polity2 score 2 and 5 years after the observation year from the PolityIV dataset (Marshall, Gurr and Jaggers 2014). For the pro-democracy campaigns in Africa we operationalize movement success as a situation where the movement affects a regime transition during period of resistance or within six months of the last campaign end. We operationalize regime transitions using the PolityIV 'regtrans' variable and the end day, month and year provided. Of the `r length(unique(navco.data$id))` campaigns in the NAVCO data, `r sum(na.omit(navco.data$success))` were successful, while, of the `r length(unique(scad.data$epid))` pro-democracy movements in Africa `r sum(na.omit(scad.data$transition))` resulted in regime transitions. To understand the types of transitions that occur in pro-democracy movements, we have also used two additional dependent variables, one where the regime transition was towards democracy, as defined in the PolityIV data, and one where the regime transition was towards autocracy, state failure or state degeneration. 
+
+## The Participation of National Trade Union Organizations. 
+
+We take our definition of participation in civil resistance movements in general from Chenoweth and Stephan (2011: 30) who write that "we define participation in a resistance campaign as active and observable engagement in collective action".  This definition is similar to that used by the Ethnic Power Relations data, who defined ethnic conflict partially along a participation dimension. They state that ‘we define ethnic wars as those fought by armed organization that recruit fighters predominantly among their own ethnic group and who forge alliance on the basis of ethnic affiliation” (p. 5, codebook; see also Sambanis 2009). We define participation for national trade union movements along similar lines. These groups participate in nonviolent conflict when we have evidence that protesters were recruited from within this institutional structure. Thus, we require evidence that national trade union movements actively participated in events of nonviolent action though organization or active protest. 
+
+Thus, we code the participation of national trade union movements in nonviolent campaigns when there is evidence to suggest that an organization claiming to represent workers interests without respect to industrial sector, skill, or geographical location also articulates the anti-regime goals of the movement. More practically, we coded the participation of national trade unions where evidence in news sources, news digests, secondary sources and reports stated that these institutions mobilized for actions of nonviolent collective action, with the intent of aiding, joining, or forming a nonviolent movement with maximalist aims.
+
+We also code the uncertainty with which we hold our coding decisions (Day et al 2014). Each coding of a conflict year has an ambiguity score of 1 or 0. Where ambiguity=1 and participation=1 we believe that on the balance of the evidence a national trade unions did participate, but there is some possibility that it did not. In our codebook we cite the source of this ambiguity, along with all sources that led us to the coding decisions. Where ambiguity =1 and participation = 0 we believe that on the balance of probabilities a national trade union organization did not participate, but it is possible that it did. Again, we cite the source of this ambiguity in the codebook. In robustness checks discussed below, we weight our participation score by this ambiguity measure. 
+
+For the pro democracy campaigns in Africa, we did not collect original data on the participation of national trade unions, but, instead, relied upon existing data in Cullen and Hendrix (2012) on the occurrence of general strikes over issues of democracy and human rights. We did this for two reasons. The first is that we wanted to re-test our hypotheses on data that was not specifically collected for the purpose of assessing the relationship between labor unions and campaign success, but where there was a plausible proxy for the participation of national trade union movements. The second is that by using all general strikes related to human rights/democracy we partially circumvent the problem of attribution. Publicly articulating regime overthrow or democratization carries increased risks of repression. General strikes can occur in the context of civil resistance movements that do not necessarily articulate maximalist goals, although they may be designed to support the campaign. Whether or not these strikes are actually part of a campaign can involve a good degree of subjective judgment, and potential error. We avoid this by including all nationwide strikes that occur in the time-bounds of a campaign, whether they articulated maximalist goals or not. They have to have articulated goals of human rights or democracy/ elections, however, to ensure that the strikes are not completely unrelated. In total there are `r nrow(scad.data)` campaign day observations, with `r sum(scad.data$genstrike.max)` general-strike days in total. Regime transitions are probably unlikely to occur during ongoing strikes, but the capability communicated by a general strike may make regime transitions more likely in the subsequent period. Our general strike variable includes a decay function, where the strikes variable decays by 1% of its value after the end of the last day of the general strike. 
+
+From 1945-2006, `r sum(na.omit(navco.data$ntu.part))/length(na.omit(navco.data$ntu.part))`% of nonviolent campaign years involved the participation of a national trade union movement. As Figure 1 shows, there was a surge of national trade union participation in the 1980s, with a smaller peak from 1997-2001. The surge in the 1980s reflects the powerful nonviolent movements in Latin America (Bolivia) and Southeast Asia (the Philippines). 
+
+
+```{r, echo=FALSE, message=FALSE}
+
+require(ggplot2)
+require(reshape)
+a <- tapply(navco.data$ntu.part, navco.data$year, sum)
+a[is.na(a)] <- 0
+b <- tapply(navco.data$ntu.part, navco.data$year, length)
+c <- as.data.frame(cbind(a, b))
+c$names <- as.integer(rownames(c)) 
+names(c) <- c("tu.part", "camp.tot", "year")
+c <- melt(c, id="year")
+```
+
+
+**Figure 1: NTU participation in Nonviolent Campaigns, 1946-2006**
+
+
+``` {r, echo=FALSE}
+ggplot(c, aes(x=year, y=value, fill=variable)) + geom_area() + xlab("Year") + ylab("Ongoing Campaign Years")
+```
+
+
+Figure 2 shows the distribution of active days of social conflict in Africa over issues of human rights/democracy from 1990-2012. The three biggest peaks of activity occurred in the mid 1990s, from 2005 to 2006 and from 2011-2012. The increase in active campaign days in 2011-2012 reflects the 'Arab Spring', captured in our data with movements in Egypt, Tunisia, Morocco and Algeria, while these movements also spread to other parts of sub-Saharan Africa, such as Senegal, in 2011. Social conflict in the 1990s appears to have been more heavily characterized by the use of general strikes than the 2001-2012 period. While the per-day frequency of collective action across Africa has increased, the proportion of those campaign-days characterized by general strike activity has declined. 
+
+
+
+```{r, echo=FALSE}
+
+a <- tapply(scad.data$genstrike.decay, scad.data$date, sum)
+a[is.na(a)] <- 0
+b <- tapply(scad.data$genstrike.max, scad.data$date, length)
+c <- as.data.frame(cbind(a, b))
+c$names <- as.Date(rownames(c) )
+names(c) <- c("gstrike", "camp.tot", "date")
+c <- melt(c, id="date")
+```
+
+
+
+**Figure 2: General Strikes in Pro-Democracy/Human Rights Movements, Africa, 1990-2012**
+
+
+``` {r, echo=FALSE}
+ggplot(c, aes(x=date, y=value, fill=variable)) + geom_area() + xlab("Date") + ylab("Number of Active Campaign Days") 
+```
+
+
+## Control Variables - NAVCO Analysis
+
+We include a number of control variables that we see as plausibly related to both national trade union participation, and the likelihood of obtaining government concessions or effecting regime transitions. We also think our control variables should be closely related to democratic regime transitions and have included them in the OLS regressions of the polity score 2 and 5 years after the observation year. 
+
+Protests in more democratic states should be more likely to attract the participation of labor groups, largely because labor unions are likely to be legal and autonomous from the government. Governments may be more responsive and more likely to give concessions to protesters as they are typically considered to be a legal form of political expression. We have used a 1-year lag of the 'polity2' variable from the PolityIV dataset (Marshall, Gurr and Jaggers 2014) for this measure. 
+
+We have included a logged, 1-year lagged measure of GDP per capita from Gleditsch (2004). Trade unions are probably more powerful in countries with higher levels of GDP and protest campaigns may be less likely to fail in countries with high incomes, as these provide the social networks for broad based mobilization. For similar reasons that urbanization facilitates the creation of trade unions and successful collective action, we include the urban population as a proportion of the entire population from the World Bank (2014). In addition to income in general, recession may also increase the salience of national workers issues, and may also, independently make the government more vulnerable to collective action as it has fewer resources at its disposal within which to offer concessions to the movement (Ulfelder 2009). We control for GDP growth in the previous year to account for this possibility. Data are from the World Bank World Development Indicators (2014). 
+
+Countries that have legalized the formation of independent trade unions are probably more likely to see labor unions participating in collective dissent, when it occurs. Independently, the presence of labor rights might also be correlated with campaign success, as social groups, in general, find it easier to mobilize in these circumstances. To control for this we have used the 'workers rights' variable from the Cingranelli and Richards Human Rights dataset (2010). 
+
+Repression should, in general, make protest campaigns less likely to succeed (Chenoweth and Stephan 2011), although in some circumstances repression can be a driver of campaign success (Sutton, Butcher and Svensson 2014). Repression might also deter the participation and formation of national labor movements. We control for repression with the severity of repression variable in the NAVCO dataset. We also control for the goals of the campaign. Movements that aim to overthow or reform the state are more likely to succeed than movements for territorial occupation or anti-occupation. Anti-regime movements should also be more likely to attract the participation of NTUs, which are national in scope. We have controlled for campiagn gaosl with a dummy variable where 1 indicates that the movement had anti-regime goals (regime overthrow, significant institutional change or policy reform) while 0 indicates territorial goals (autonomy, independence, anti-occupation) from Chenoweth and Lewis (2013). 
+
+We have also controlled for the non-linear effects of time on strategic success and regime transition, with a cubic polynomial measuring the time since the beginning of the movement (Carter and Signorino 2010). 
+
+Finally, we do control for the size of the movement, in terms of participation, but do in a separate model because we expect that the power of national trade unions runs partially through increases participation. We also expect a residual effect, however possibly reflecting tactical diversity and resilience under repression. To control for participation we use the campaign size variable from Chenoweth and Lewis (2013). There is a considerable amount of missing data for year on year campaign sizes, and we have used multiple imputation to fill this data (I have not actually done this yet).   
+
+## Control Variables - SCAD Analysis
+
+We have used all of the above variables in our analysis of campaign days in Africa from 1990-2012 (democracy, GDP, GDP growth, urban population, campaign size (using the 'npart' variable in Salehyan and Hendrix 2012, with a decay function), workers rights, repression (using the 'repress' variable in Salehyan and Hendrix (2012) with a decay function) and a cubic polynomial of time in days. In addition, we have included some other variables available through the highly disaggregated data in Salehyan and Hendrix (2012). We include a variable, and decay, for whether there was a demonstration on the campaign-day and similar variables for the presence of a riot and a strike limited to a particular sector. 
+
+## Method of Analysis
+
+We report seven models below for the NAVCO analysis and six for the SCAD analysis. For the NAVCO analysis, Model 1 tests the effects of NTU participation on strategic success, without control variables. Model 2 introduces the control variables mentioned above, but without workers rights and GDP as there is a lot of missing data. Model 3 replicates model 2, but introduces the participation variable. Model 4 then introduces the GDP growth and workers rights variables. Model 6 uses an ordinal logit to assess how the participation of NTUs effects the 5 different stages of progress discussed in NAVCO. Model 6 uses OLS regression to estimate the polity score 2 years after the observation year, and includes all controls in Model 2, in addition to participation and progress. Model 7 replicates Model 6, but for the polity score 5 years after the observation year. 
+
+For the SCAD analysis, Model 1 tests the effect of our general strike variable on regime transitions. Model 2 includes controls for other types of collective action (demonstration, limited strikes, riots, repression) and time. Model 4 introduces the structural control variables: democracy, income, GDP growth and urbanization. Model 5 replicates model 4, including participation.  
+
+Have also tried Random effects models and am currently trying to employ some multi-level models that explicitly account for the grouping structure in the data (i.e by country)
+
+# Results. 
+
+This section proceeds in the following way. First, our theory suggests that nonviolent campaigns with national trade union participation should be larger and more diverse than those that do not (not sure whether to do this or put it in a footnote or appendix). Table 1 is a correlation matrix of the campaign size, and diversity variables in the NAVCO 2.0 dataset. Table 2 shows the bivariate correlations between the proportion of movements that experienced success, and the proportion of movements that had national trade union participation. Table 2 also shows the average score on the general strike decay variable for those observations that experienced regime transitions and those that did not. 
+
+## Descriptive Statistics and Bivariate Results 
+
+``` {r, echo=FALSE, message=FALSE, results='hide', warning=FALSE}
+
+require(xtable)
+#### correlation matrix
+#### Extract the data 
+
+cordata <- na.omit(subset(navco.data, select=c("camp_orgs", "camp_size_est", "cdivers_gender", "cdivers_age", "cdivers_class", "cdivers_urbrural", "cdivers_ideol", "cdivers_party", "cdivers_regional", "cdivers_ethnicity", "cdivers_religion", "camp_structure", "ntu.part")))
+
+cordata$"camp_orgs"[cordata$"camp_orgs"==-99] <- NA
+cordata$"camp_size_est"[cordata$"camp_size_est"==-99] <- NA
+cordata$"cdivers_gender"[cordata$"cdivers_gender"==-99] <- NA
+cordata$"cdivers_age"[cordata$"cdivers_age"==-99] <- NA
+cordata$"cdivers_class"[cordata$"cdivers_class"==-99] <- NA
+cordata$"cdivers_urbrural"[cordata$"cdivers_urbrural"==-99] <- NA
+cordata$"cdivers_ideol"[cordata$"cdivers_ideol"==-99] <- NA
+cordata$"cdivers_party"[cordata$"cdivers_party"==-99] <- NA
+cordata$"cdivers_regional"[cordata$"cdivers_regional"==-99] <- NA
+cordata$"cdivers_ethnicity"[cordata$"cdivers_ethnicity"==-99] <- NA
+cordata$"cdivers_religion"[cordata$"cdivers_religion"==-99] <- NA
+cordata$"camp_structure"[cordata$"camp_structure"==-99] <- NA
+cordata$"ntu.part"[cordata$"ntu.part"==-99] <- NA
+
+names(cordata) <- c("Number of Campaign Organization", "Campaign Size", "Gender Diversity", "Age Diversity", "Class Diversity", "Urban/Rural Diversity", "Ideological Diversity", "Political Party Diversity", "Regional Diversity", "Ethnic Diversity", "Religious Diversity", "Campaign Structure", "ntu.part")
+
+cordata <- as.matrix(na.omit(cordata))
+
+library(Hmisc)
+correlations2 <- rcorr(cordata, type="pearson") # type can be pearson or spearman
+names(correlations2)
+
+a <- as.data.frame(correlations2$r)
+c <- rownames(a)
+a <- a[,"ntu.part"]
+b <- as.data.frame(correlations2$P)
+b <- b[,"ntu.part"]
+table1 <- as.data.frame(cbind(c,a,b))
+table1 <- table1[1:12,]
+names(table1) <- c("Variable", "Coefficient", "P-value")
+table1 <- xtable(table1)
+#### Bivariate Analysis
+
+
+a <- na.omit(subset(navco.data, select=c("stsuccess", "ntu.part")))
+test1 <- chisq.test(a$stsuccess, a$ntu.part) 
+b <- mean(a[a$ntu.part == 1, ]$stsuccess)
+c <- mean(a[a$ntu.part == 0, ]$stsuccess)
+p1 <- as.data.frame(cbind(b,c,test1$p.value), row.names="Strategic Success Rate")
+names(p1) <- c("NTU Participation", "No NTU Participation", "P-value")
+print(p1)
+
+d <- na.omit(subset(scad.data, select=c("transition", "genstrike.decay")))
+test2 <- t.test(d$genstrike.decay, d$transition) 
+e <- mean(d[d$transition == 1, ]$genstrike.decay)
+f <- mean(d[d$transition == 0, ]$genstrike.decay)
+p2 <- as.data.frame(cbind(e,f,test2$p.value), row.names="General Strike Decay Value")
+names(p2) <- c("Transition", "No Transition", "P-value")
+print(p2)
+p1 <- xtable(p1)
+p2 <- xtable(p2)
+
+
+
+
+```
+
+
+
+
+
+
+
+
+
+**Table 1: Bivariate Corrleations, NTU Participation and Movement Structure, 1946-2006**
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rlll}
+  \hline
+ & Variable & Coefficient & P-value \\ 
+  \hline
+1 & Number of Campaign Organization & 0.179965615272522 & 0.00300051930841549 \\ 
+  2 & Campaign Size & 0.420270293951035 & 5.58220136781529e-13 \\ 
+  3 & Gender Diversity & -0.0200285613536835 & 0.743207442804395 \\ 
+  4 & Age Diversity & 0.0116399265825748 & 0.849009339806408 \\ 
+  5 & Class Diversity & 0.162970185279846 & 0.00728750818760115 \\ 
+  6 & Urban/Rural Diversity & -0.134588733315468 & 0.0270130770563743 \\ 
+  7 & Ideological Diversity & -0.0414967574179173 & 0.497143989472335 \\ 
+  8 & Political Party Diversity & 0.168017148971558 & 0.00564539243144635 \\ 
+  9 & Regional Diversity & 0.0387492142617702 & 0.526081687641525 \\ 
+  10 & Ethnic Diversity & 0.152656197547913 & 0.012022039740875 \\ 
+  11 & Religious Diversity & 0.237714260816574 & 7.9929213280483e-05 \\ 
+  12 & Campaign Structure & 0.0185565128922462 & 0.761488958950204 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+
+
+Table 1 is a correlation matrix of our NTU participation variable with the diversity, size and structure variables provided in the NAVCO 2.0 dataset. The results suggest that movements with NTU participation tend to be significantly larger, and involve a larger number of civil society organizations. They tend to have higher levels of class diversity, political party diversity, ethnic diversity and religious diversity. Interestingly they tend to have slightly lower levels of urban-rural diversity, but this might make sense given the industrial base of most NTUs. Table 1 suggests that our causal mechanism is at least plausible. NTU participation does appear to involve higher levels of diversity, in terms of distinct social organizations and some social groups. They are also substantially larger. 
+
+
+
+**Table 2: Bivariate Associations, NTU Participation/General Strikes and Success/Regime Transitions**
+
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrr}
+  \hline
+ & NTU Participation & No NTU Participation & P-value \\ 
+  \hline
+Strategic Success Rate & 0.59 & 0.32 & 0.00 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrr}
+  \hline
+ & Transition & No Transition & P-value \\ 
+  \hline
+General Strike Decay Value & 0.20 & 0.08 & 0.00 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+
+
+Table 2 suggests that there is a significant association between NTU participation and the chances of movement success. Roughly 59% of movements with NTU participation obtain strategic success, while 32% of movements without NTU participation did. There also appears to be a close and significant relationship between general strikes and the probability of regime transitions in Africa. The score on the transition decay value is much higher in observations where there was a regime transition (roughly 168 days from a general strike). Where no regime transitions occurred, this value is smaller (roughly 253 days from the last general strike). Both of these associations are significant below the 99.99 confidence level, meaning we can be fairly confident in rejecting the null hypothesis that there is no association between NTU participation and campaign success. Of course, this association could be epiphenomenal and produced by the control variables discussed earlier. The following section displays the results of our regression modelling. 
+
+
+## Regression Models: NAVCO Data
+
+``` {r, echo=FALSE, message=FALSE, results='hide', warning=FALSE}
+require(xtable)
+require(texreg)
+require(Zelig)
+require(ZeligChoice)
+require(gee)
+require(ZeligMultilevel)
+
+
+#### Model 1, just tu.part - dv is stsuccess
+
+m1.data <- na.omit(subset(navco.data, select=c("stsuccess", "ntu.part", "ccode")))
+m1 <- zelig(stsuccess ~ ntu.part, model="logit", data=m1.data, robust=TRUE)
+
+#### Model 2, adding in all mentioned control variables without participation
+m2.data <- na.omit(subset(navco.data, select=c("stsuccess", "ntu.part", "rgdppc.lag.1", "pop", "polity2.lag.1", "repression", "anti.regime", "time", "time2", "time3", "ccode")))
+m2 <- zelig(stsuccess ~ ntu.part+log(rgdppc.lag.1)+log(pop)+polity2.lag.1+repression+anti.regime+time+time2+time3, model="logit", data=m2.data, robust=TRUE)
+
+
+x1 <- setx(m2, ntu.part=1)
+x0 <- setx(m2, ntu.part=0)
+
+x2 <- setx(m2, polity2.lag.1=-10:10, ntu.part=1)
+x3 <- setx(m2, polity2.lag.1=-10:10, ntu.part=0)
+
+s.out1 <- sim(m2, x = x0, x1 = x1)
+s.out2 <- sim(m2, x = x2, x1 = x3)
+
+#### Model 3, adding in particpation, imputed. 
+m3.data <- na.omit(subset(navco.data, select=c("stsuccess", "ntu.part", "rgdppc.lag.1", "pop", "polity2.lag.1", "repression", "anti.regime", "camp_size_est_imp", "time", "time2", "time3", "rad_flank")))
+m3 <- zelig(stsuccess ~ ntu.part+log(rgdppc.lag.1)+log(pop)+polity2.lag.1+repression+anti.regime+camp_size_est_imp+time+time2+time3, model="logit", data=m3.data, robust=TRUE)
+summary(m3)
+#### Model 4 - throw an ologit in there. 
+m4.data <- na.omit(subset(navco.data, select=c("progress", "ntu.part", "rgdppc.lag.1", "pop", "polity2.lag.1", "repression", "anti.regime", "time", "time2", "time3")))
+m4 <- zelig(progress ~ ntu.part+log(rgdppc.lag.1)+log(pop)+polity2.lag.1+repression+anti.regime+time+time2+time3, model="ologit", data=m4.data)
+
+x4 <- setx(m4, ntu.part=0)
+x5 <- setx(m4, ntu.part=1)
+s.out3 <- sim(m4, x = x4, x1 = x5)
+
+
+
+#### Model 5, adding in workers rights and GDP growth 
+m5.data <- na.omit(subset(navco.data, select=c("stsuccess", "ntu.part", "rgdppc.lag.1", "pop", "polity2.lag.1", "repression", "anti.regime", "camp_size_est_imp", "worker.lag.1", "time", "time2", "time3", "wdi.gdpgrowth.lag.1")))
+m5 <- zelig(stsuccess ~ ntu.part+log(rgdppc.lag.1)+log(pop)+polity2.lag.1+repression+anti.regime+camp_size_est_imp+worker.lag.1+wdi.gdpgrowth.lag.1+time+time2+time3, model="logit", data=m5.data, robust=TRUE)
+
+
+#### Model testing the effects of post-conflict democracy
+m6.data <- na.omit(subset(navco.data, select=c("polity2.lead.5", "ntu.part", "rgdppc.lag.1", "pop", "polity2.lag.1", "repression", "anti.regime", "camp_size_est_imp", "progress")))
+m6 <- zelig(polity2.lead.5 ~ ntu.part+log(rgdppc.lag.1)+log(pop)+polity2.lag.1+repression+anti.regime+camp_size_est_imp+progress, model="ls", data=m6.data, robust=TRUE)
+
+
+#### Model testing the effects of post-conflict democracy
+m7.data <- na.omit(subset(navco.data, select=c("polity2.lead.2", "ntu.part", "rgdppc.lag.1", "pop", "polity2.lag.1", "repression", "anti.regime", "camp_size_est_imp", "progress")))
+m7 <- zelig(polity2.lead.2 ~ ntu.part+log(rgdppc.lag.1)+log(pop)+polity2.lag.1+repression+anti.regime+camp_size_est_imp+progress, model="ls", data=m7.data, robust=TRUE)
+
+
+#### collpase the file into episodes
+require(dplyr)
+navco.group <- arrange(navco.data, id, year)
+navco.group <- group_by(navco.data, id)
+navco.group <- summarise(navco.group, ntu.part=max(ntu.part), polity2.lead.5=last(polity2.lead.5), rgdppc.lag.1=last(rgdppc.lag.1), polity2.lead.2=last(polity2.lead.2), pop=last(pop), polity2.lag.1=last(polity2.lag.1), repression=mean(repression), anti.regime=max(anti.regime), camp_size_est_imp=max(camp_size_est_imp), success=max(success))
+
+
+m8.data <- na.omit(subset(navco.group, select=c("polity2.lead.2", "ntu.part", "rgdppc.lag.1", "pop", "polity2.lag.1", "repression", "anti.regime", "camp_size_est_imp", "polity2.lead.5", "success")))
+m8 <- zelig(polity2.lead.5 ~ ntu.part+log(rgdppc.lag.1)+log(pop)+polity2.lag.1+polity2.lag.1^2+repression+anti.regime+camp_size_est_imp, model="normal", data=m8.data, robust=TRUE)
+
+
+x0 <- setx(m6, polity2.lag.1=-10:10, ntu.part=0)
+x1 <- setx(m6, polity2.lag.1=-10:10, ntu.part=1)
+
+x2 <- setx(m6, ntu.part=0)
+x3 <- setx(m6, ntu.part=1)
+dem.sim <- sim(m6,x0,x1)
+dem.sim2 <- sim(m6,x2,x3)
+
+
+
+
+reg.out2 <- texreg(list(m1, m2, m3, m4, m5, m6, m7))
+
+```
+
+**Table 3: Regression Models, NTU Participation, Campaign Success and Democratization, 1946-2006**
+
+\begin{table}
+\begin{center}
+\begin{tabular}{l c c c c c c c }
+\hline
+                     & Model 1 & Model 2 & Model 3 & Model 4 & Model 5 & Model 6 & Model 7 \\
+\hline
+(Intercept)          & $-0.78^{***}$ & $3.59$       & $4.26$       &               & $10.44^{**}$ & $3.90$       & $7.71^{*}$    \\
+                     & $(0.13)$      & $(2.06)$     & $(2.21)$     &               & $(3.57)$     & $(3.89)$     & $(3.65)$      \\
+ntu.part             & $1.13^{***}$  & $1.28^{***}$ & $0.95^{**}$  & $1.09^{***}$  & $2.23^{***}$ & $2.55^{***}$ & $1.35^{*}$    \\
+                     & $(0.24)$      & $(0.30)$     & $(0.32)$     & $(0.25)$      & $(0.52)$     & $(0.67)$     & $(0.63)$      \\
+log(rgdppc.lag.1)    &               & $-0.24$      & $-0.33$      & $-0.12$       & $-0.92^{**}$ & $0.49$       & $0.15$        \\
+                     &               & $(0.16)$     & $(0.17)$     & $(0.13)$      & $(0.28)$     & $(0.31)$     & $(0.29)$      \\
+log(pop)             &               & $-0.30^{*}$  & $-0.36^{**}$ & $-0.30^{**}$  & $-0.57^{**}$ & $-0.61^{**}$ & $-0.83^{***}$ \\
+                     &               & $(0.12)$     & $(0.13)$     & $(0.10)$      & $(0.19)$     & $(0.22)$     & $(0.20)$      \\
+polity2.lag.1        &               & $0.04$       & $0.05$       & $0.04^{*}$    & $0.09$       & $0.52^{***}$ & $0.68^{***}$  \\
+                     &               & $(0.02)$     & $(0.03)$     & $(0.02)$      & $(0.05)$     & $(0.05)$     & $(0.04)$      \\
+repression           &               & $-0.31^{**}$ & $-0.34^{**}$ & $-0.33^{***}$ & $-0.45^{*}$  & $0.19$       & $-0.08$       \\
+                     &               & $(0.12)$     & $(0.13)$     & $(0.10)$      & $(0.20)$     & $(0.25)$     & $(0.23)$      \\
+anti.regime          &               & $1.26^{***}$ & $1.26^{***}$ & $1.42^{***}$  & $0.62$       & $2.27^{***}$ & $1.15$        \\
+                     &               & $(0.32)$     & $(0.33)$     & $(0.26)$      & $(0.50)$     & $(0.66)$     & $(0.62)$      \\
+time                 &               & $0.54$       & $0.58$       & $0.19$        & $1.05$       &              &               \\
+                     &               & $(0.53)$     & $(0.56)$     & $(0.35)$      & $(0.86)$     &              &               \\
+time2                &               & $-0.16$      & $-0.16$      & $-0.06$       & $-0.21$      &              &               \\
+                     &               & $(0.12)$     & $(0.13)$     & $(0.08)$      & $(0.19)$     &              &               \\
+time3                &               & $0.01$       & $0.01$       & $0.01$        & $0.01$       &              &               \\
+                     &               & $(0.01)$     & $(0.01)$     & $(0.00)$      & $(0.01)$     &              &               \\
+camp\_size\_est\_imp &               &              & $0.63^{***}$ &               & $0.93^{***}$ & $-0.67^{*}$  & $0.15$        \\
+                     &               &              & $(0.15)$     &               & $(0.27)$     & $(0.30)$     & $(0.28)$      \\
+0|1                  &               &              &              & $-4.00^{*}$   &              &              &               \\
+                     &               &              &              & $(1.73)$      &              &              &               \\
+1|2                  &               &              &              & $-3.51^{*}$   &              &              &               \\
+                     &               &              &              & $(1.73)$      &              &              &               \\
+2|3                  &               &              &              & $-2.78$       &              &              &               \\
+                     &               &              &              & $(1.73)$      &              &              &               \\
+3|4                  &               &              &              & $-1.87$       &              &              &               \\
+                     &               &              &              & $(1.72)$      &              &              &               \\
+worker.lag.1         &               &              &              &               & $0.07$       &              &               \\
+                     &               &              &              &               & $(0.05)$     &              &               \\
+wdi.gdpgrowth.lag.1  &               &              &              &               & $0.01$       &              &               \\
+                     &               &              &              &               & $(0.04)$     &              &               \\
+progress             &               &              &              &               &              & $0.64^{**}$  & $1.05^{***}$  \\
+                     &               &              &              &               &              & $(0.20)$     & $(0.19)$      \\
+\hline
+AIC                  & 486.22        & 337.48       & 313.92       & 805.54        & 161.20       & 1604.43      & 1618.53       \\
+BIC                  & 494.09        & 374.35       & 354.33       & 853.47        & 201.65       & 1640.45      & 1654.84       \\
+Log Likelihood       & -241.11       & -158.74      & -145.96      & -389.77       & -67.60       & -792.22      & -799.27       \\
+Deviance             & 482.22        & 317.48       & 291.92       & 779.54        & 135.20       &              &               \\
+Num. obs.            & 378           & 295          & 291          & 295           & 166          & 271          & 279           \\
+R$^2$                &               &              &              &               &              & 0.47         & 0.60          \\
+Adj. R$^2$           &               &              &              &               &              & 0.45         & 0.59          \\
+F statistic          &               &              &              &               &              & 28.58        & 50.56         \\
+\hline
+\multicolumn{8}{l}{\scriptsize{$^{***}p<0.001$, $^{**}p<0.01$, $^*p<0.05$}}
+\end{tabular}
+\caption{Statistical models}
+\label{table:coefficients}
+\end{center}
+\end{table}
+
+
+
+The results of Table 3 suggest that the participation of national trade union movements in nonviolent conflicts increases the probability of extracting concessions from the government. Without control variables, the effect is positive and significant. This positive, statistically significant result still obtains when we control for GDP, population, repression and campaign goals. The result also holds when we control for workers rights, keeping in mind that this excludes observations from before 1981. The size of the campaign, in terms of the number of participants, does reduce the size of the coefficient and the significance of the national trade union variable. As we would expect there is a strong and significant effect of participation on the success of nonviolent campaigns. These results suggest that one of the causal mechanisms linking national trade union participation to the success of nonviolent campaigns is the role of participation. However, there is a significant residual effect of national trade union participation on success, suggesting that NTUs offer additional capabilities to nonviolent movements, perhaps in terms of resilience and the ability to make credible commitments with the government, as suggested in the theory section. This interpretation is reinforced by Model 2, which suggests that repression has a marginal impact on the effect of national trade union participation on success. 
+
+Exploring the results further, with simulated marginal effects, we observe that (from Model 2) campaigns that do not have the participation of national trade unions have a `r s.out1$stats$"Expected Values: E(Y|X)"[1]` probability of strategic success. This increases to `r s.out1$stats$"Expected Values: E(Y|X1)"[1]` when national trade unions do participate. These effects can be seen in Figure 3, which plots the expected probabilities of strategic success across the range of polity values. 
+
+**Figure 3: Marginal Effects of NTU Participation on Campaign Success, 1946-2006**
+
+``` {r, echo=FALSE}
+plot(s.out2)
+```
+
+Figure 1 suggests that the participation of NTUs has a substantive and significant effect on the strategic success of nonviolent movements. Over almost the entire range of the polity scale, the 95% confidence intervals for situations where national trade union movements do and do not participate, do not overlap. The is suggestive that there is indeed a different in the probability of strategic success when NTUs participation.
+
+We can disaggregate the results a little further by examining the ordinal logit of 'progress' against national trade union participation. Figure 4 shows the marginal effects of NTU participation on the 5 levels of progress in Chenoweth and Lewis's 'progress' variable.The results of Figure 4 suggests that the participation of national trade unions has the biggest effect on the probability of no concessions. The probability of no progress in a given campaign year falls from over `r s.out3$stats$"Expected Values: P(Y=j|X)"[1,1]` to `r s.out3$stats$"Expected Values: P(Y=j|X1)"[1,1]` when national trade unions become involved in the conflict. There is a weaker, although positive effect on the probability of full success. Without national trade union participation the probability of full success is `r s.out3$stats$"Expected Values: P(Y=j|X)"[5,1]`, when national trade unions participate, this probability rises to `r s.out3$stats$"Expected Values: P(Y=j|X1)"[5,1]`.
+
+**Figure 4: Marginal Effects of NTU Participation on Campaign Progress, 1946-2006**
+
+``` {r, echo=FALSE}
+# plot(s.out3)
+```
+
+
+The results of Table 1 also suggest that NTU participation in nonviolent conflict precipitates democratization, when compared with movements without NTU participation. A movement with NTU participation, is, on average, 1.35 points higher on the polity scale, 2 years after the relevant campaign year than movements with no NTU participation, and 2.55 points after 5 years. This result is independent of the democracy score in the year before and other plausible correlates of democracy, especially income, and other movement-relevant variables, such as the movement's goals. Figure 5 compares the polity scores for nonviolent campaigns with and without national trade union participation across the range of polity scores in the preceding year. 
+
+**Figure 5: Marginal Effects of NTU Participation on Polity Score 5 Years into the Future**
+
+``` {r, echo=FALSE}
+plot(dem.sim)
+```
+
+Figure 3 shows again that movements with NTU participation tend to have higher polity scores, 5 years after the relevant campaign year. The 95% confidence intervals do not cross, across both distributions, suggesting that we can be fairly confident that the difference in expected polity scores is significantly different. On average, a movement without NTU participation, and holding all other variables (from model 6) at their mean and mode values, has an expected polity score of `r dem.sim2$stats$"Expected Values: E(Y|X)"[1,1]` 5 years after the relevant campaign year. This rises to `r dem.sim2$stats$"Expected Values: E(Y|X1)"[1,1]` when NTUs participate. 
+
+Overall, the results of our analysis with the NAVCO data suggest three things: (1) that the participation of NTUs makes it more likely that movements will extract significant government concessions in that campaign year, (2) that NTU participation makes is especially unlikely that nonviolent movements will extract no concessions from the government and (3) NTU participation tends to engender democratization, especially five years after participation. 
+
+## Regression Results: SCAD data
+
+In this section we detail the results of our analysis using the Social Conflict in Africa Dataset. To recap, this is a dataset of pro-democracy/human rights movements in Africa from 1990-2012. The unit of analysis is the nonviolent conflict day. The dependent variable is a regime transition and the main independent variable the presence of a general strike, with a decay function to capture deteriorating effects over time. Table 3 shows the results of six models. 
+
+
+``` {r, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
+scad.data$time2 <- scad.data$time^2
+scad.data$time3 <- scad.data$time^3
+
+
+#### create new variable for the multinomial logit, values above 1 "positive change" 
+
+scad.data$regtrans[scad.data$ccode==404 & scad.data$year==2011 & scad.data$month==12 & scad.data$day==13] <- -1
+scad.data$regtrans[scad.data$ccode==433 & scad.data$year==2007 & scad.data$month==4 & scad.data$day==21] <- 0
+scad.data$regtrans[scad.data$ccode==434 & scad.data$year==2005 & scad.data$month==11 & scad.data$day==18] <- 0
+scad.data$regtrans[scad.data$ccode==435 & scad.data$year==2005 & scad.data$month==6 & scad.data$day==11] <- 3
+scad.data$regtrans[scad.data$ccode==435 & scad.data$year==2009 & scad.data$month==5 & scad.data$day==18] <- 1
+scad.data$regtrans[scad.data$ccode==436 & scad.data$year==2004 & scad.data$month==5 & scad.data$day==29] <- 0
+scad.data$regtrans[scad.data$ccode==437 & scad.data$year==1990 & scad.data$month==10 & scad.data$day==28] <- 0
+scad.data$regtrans[scad.data$ccode==437 & scad.data$year==1999 & scad.data$month==9 & scad.data$day==27] <- 3
+scad.data$regtrans[scad.data$ccode==437 & scad.data$year==2006 & scad.data$month==12 & scad.data$day==5] <- -77
+scad.data$regtrans[scad.data$ccode==438 & scad.data$year==2009 & scad.data$month==10 & scad.data$day==12] <- 2
+scad.data$regtrans[scad.data$ccode==451 & scad.data$year==1997 & scad.data$month==5 & scad.data$day==13] <- -77
+scad.data$regtrans[scad.data$ccode==451 & scad.data$year==2007 & scad.data$month==3 & scad.data$day==20] <- 0
+scad.data$regtrans[scad.data$ccode==461 & scad.data$year==1991 & scad.data$month==7 & scad.data$day==10] <- 1
+scad.data$regtrans[scad.data$ccode==471 & scad.data$year==1991 & scad.data$month==10 & scad.data$day==2] <- 1
+scad.data$regtrans[scad.data$ccode==481 & scad.data$year==2009 & scad.data$month==5 & scad.data$day==23] <- 3
+scad.data$regtrans[scad.data$ccode==501 & scad.data$year==2002 & scad.data$month==10 & scad.data$day==9] <- 3
+scad.data$regtrans[scad.data$ccode==501 & scad.data$year==2007 & scad.data$month==9 & scad.data$day==14] <- 0
+scad.data$regtrans[scad.data$ccode==517 & scad.data$year==1994 & scad.data$month==2 & scad.data$day==23] <- 0
+scad.data$regtrans[scad.data$ccode==520 & scad.data$year==1990 & scad.data$month==9 & scad.data$day==1] <- -77
+scad.data$regtrans[scad.data$ccode==551 & scad.data$year==1991 & scad.data$month==6 & scad.data$day==16] <- 3
+scad.data$regtrans[scad.data$ccode==552 & scad.data$year==1999 & scad.data$month==5 & scad.data$day==15] <- 1
+scad.data$regtrans[scad.data$ccode==552 & scad.data$year==2001 & scad.data$month==2 & scad.data$day==3] <- 0
+scad.data$regtrans[scad.data$ccode==552 & scad.data$year==2008 & scad.data$month==11 & scad.data$day==11] <- 2
+scad.data$regtrans[scad.data$ccode==553 & scad.data$year==2003 & scad.data$month==1 & scad.data$day==26] <- 0
+scad.data$regtrans[scad.data$ccode==560 & scad.data$year==1992 & scad.data$month==8 & scad.data$day==6] <- 2
+scad.data$regtrans[scad.data$ccode==580 & scad.data$year==1991 & scad.data$month==10 & scad.data$day==29] <- 3
+scad.data$regtrans[scad.data$ccode==615 & scad.data$year==1995 & scad.data$month==7 & scad.data$day==25] <- 1
+scad.data$regtrans[scad.data$ccode==615 & scad.data$year==2004 & scad.data$month==1 & scad.data$day==22] <- 2
+scad.data$regtrans[scad.data$ccode==616 & scad.data$year==2002 & scad.data$month==2 & scad.data$day==8] <- 0
+scad.data$regtrans[scad.data$ccode==625 & scad.data$year==2011 & scad.data$month==4 & scad.data$day==21] <- 98
+
+scad.data$mn.transition <- scad.data$transition
+scad.data$mn.transition[scad.data$regtrans>=1 & scad.data$regtrans<4] <- 2
+scad.data$mn.transition <- as.factor(scad.data$mn.transition)
+
+scad.data$dem.trans <- scad.data$mn.transition
+scad.data$dem.trans[scad.data$regtrans<=0 | scad.data$regtrans>90] <- 0
+
+scad.data$neg.trans <- scad.data$mn.transition
+scad.data$neg.trans[scad.data$regtrans>=1 & scad.data$regtrans<4] <- 0
+
+### Model 1
+scad.1.data <- na.omit(subset(scad.data, select=c("transition", "genstrike.decay")))
+scad.1 <- zelig(transition ~ genstrike.decay, model="logit", data=scad.1.data, robust=TRUE)
+
+### Model 2
+scad.2.data <- na.omit(subset(scad.data, select=c("transition", "genstrike.decay", "riot.decay", "dem.decay", "limstrike.decay", "time", "time2", "time3", "repress.decay")))
+scad.2 <- zelig(transition ~ genstrike.decay + riot.decay +dem.decay+limstrike.decay+time+time2+time3+ repress.decay, model="logit", data=scad.2.data, robust=TRUE)
+
+### Model 3
+
+scad.3.data <- na.omit(subset(scad.data, select=c("transition", "genstrike.decay", "riot.decay", "dem.decay", "limstrike.decay", "time", "time2", "time3", "repress.decay", "polity2.lag.1", "rgdppc.lag.1", "wdi.pop", "wdi.urbpop.lag.1")))
+scad.3 <- zelig(transition ~ genstrike.decay + riot.decay +dem.decay+limstrike.decay+repress.decay+polity2.lag.1+log(rgdppc.lag.1)+log(wdi.pop)+wdi.urbpop.lag.1+time+time2+time3, model="logit", data=scad.3.data, robust=TRUE)
+
+scad.3.nt <- zelig(transition ~ genstrike.decay + riot.decay +dem.decay+limstrike.decay+repress.decay+polity2.lag.1+log(rgdppc.lag.1)+log(wdi.pop)+wdi.urbpop.lag.1, model="logit", data=scad.3.data, robust=TRUE)
+
+x0 <- setx(scad.3.nt, genstrike.decay=0, polity2.lag.1=-9:5)
+x1 <- setx(scad.3.nt, genstrike.decay=1, polity2.lag.1=-9:5)
+
+x2 <- setx(scad.3.nt, genstrike.decay=0)
+x3 <- setx(scad.3.nt, genstrike.decay=1)
+
+scad.sim <- sim(scad.3.nt, x=x0, x1=x1)
+scad.sim2 <- sim(scad.3.nt, x=x2, x1=x3)
+
+### Model 4 - including participation
+scad.4.data <- na.omit(subset(scad.data, select=c("transition", "genstrike.decay", "riot.decay", "dem.decay", "limstrike.decay", "time", "time2", "time3", "repress.decay", "polity2.lag.1", "rgdppc.lag.1", "wdi.pop", "wdi.urbpop.lag.1", "npart.decay")))
+scad.4 <- zelig(transition ~ genstrike.decay + riot.decay +dem.decay+limstrike.decay+time+time2+time3+ repress.decay+polity2.lag.1+log(rgdppc.lag.1)+log(wdi.pop)+wdi.urbpop.lag.1+npart.decay, model="logit", data=scad.4.data, robust=TRUE)
+
+
+### Model 4 - Democratic Transitions and Negative transitions
+scad.5.data <- na.omit(subset(scad.data, select=c("neg.trans", "dem.trans", "genstrike.decay", "riot.decay", "dem.decay", "limstrike.decay", "time", "time2", "time3", "repress.decay", "polity2.lag.1", "rgdppc.lag.1", "wdi.pop", "wdi.urbpop.lag.1")))
+scad.5 <- zelig(dem.trans ~ genstrike.decay + riot.decay +dem.decay+limstrike.decay+time+time2+time3+ repress.decay+polity2.lag.1+log(rgdppc.lag.1)+log(wdi.pop)+wdi.urbpop.lag.1, model="logit", data=scad.5.data, robust=TRUE)
+scad.6 <- zelig(neg.trans ~ genstrike.decay + riot.decay +dem.decay+limstrike.decay+time+time2+time3+ repress.decay+polity2.lag.1+log(rgdppc.lag.1)+log(wdi.pop)+wdi.urbpop.lag.1, model="logit", data=scad.5.data, robust=TRUE)
+
+table2 <- texreg(list(scad.1, scad.2, scad.3, scad.4, scad.5, scad.6))
+
+scad.5.nt <- zelig(dem.trans ~ genstrike.decay + riot.decay +dem.decay+limstrike.decay+ repress.decay+polity2.lag.1+log(rgdppc.lag.1)+log(wdi.pop)+wdi.urbpop.lag.1, model="logit", data=scad.5.data, robust=TRUE)
+
+x3 <- setx(scad.5.nt, polity2.lag.1=-9:5, genstrike.decay=0)
+x4 <- setx(scad.5.nt, polity2.lag.1=-9:5, genstrike.decay=1)
+
+x5 <- setx(scad.5.nt, polity2.lag.1=-9, genstrike.decay=0)
+x6 <- setx(scad.5.nt, polity2.lag.1=-9, genstrike.decay=1)
+
+demtrans.sim <- sim(scad.5.nt, x=x3, x1=x4)
+demtrans.sim2 <- sim(scad.5.nt, x=x5, x1=x6)
+
+table2
+```
+
+**Table 3: Effects of General Strikes on Regime Transitions, Africa, 1990-2012**
+
+\begin{table}
+\begin{center}
+\begin{tabular}{l c c c c c c }
+\hline
+                  & Model 1 & Model 2 & Model 3 & Model 4 & Model 5 & Model 6 \\
+\hline
+(Intercept)       & $-6.68^{***}$ & $-6.73^{***}$ & $1.33$       & $2.27$        & $-0.71$      & $-0.30$     \\
+                  & $(0.14)$      & $(0.39)$      & $(2.45)$     & $(2.48)$      & $(3.71)$     & $(3.40)$    \\
+genstrike.decay   & $1.53^{***}$  & $1.40^{***}$  & $1.40^{***}$ & $1.00^{*}$    & $2.54^{***}$ & $-1.29$     \\
+                  & $(0.36)$      & $(0.38)$      & $(0.42)$     & $(0.44)$      & $(0.53)$     & $(1.18)$    \\
+riot.decay        &               & $0.44$        & $0.44$       & $0.27$        & $0.22$       & $0.34$      \\
+                  &               & $(0.36)$      & $(0.39)$     & $(0.40)$      & $(0.53)$     & $(0.63)$    \\
+dem.decay         &               & $0.68$        & $1.20^{**}$  & $0.45$        & $1.59^{*}$   & $0.80$      \\
+                  &               & $(0.39)$      & $(0.46)$     & $(0.53)$      & $(0.65)$     & $(0.68)$    \\
+limstrike.decay   &               & $0.71$        & $0.70$       & $0.32$        & $-0.18$      & $1.34^{*}$  \\
+                  &               & $(0.43)$      & $(0.46)$     & $(0.49)$      & $(0.72)$     & $(0.62)$    \\
+time              &               & $-0.01$       & $0.00$       & $0.00$        & $0.00$       & $-0.01$     \\
+                  &               & $(0.00)$      & $(0.00)$     & $(0.00)$      & $(0.01)$     & $(0.01)$    \\
+time2             &               & $0.00$        & $0.00$       & $0.00$        & $0.00$       & $0.00$      \\
+                  &               & $(0.00)$      & $(0.00)$     & $(0.00)$      & $(0.00)$     & $(0.00)$    \\
+time3             &               & $0.00$        & $0.00$       & $0.00$        & $0.00$       & $0.00$      \\
+                  &               & $(0.00)$      & $(0.00)$     & $(0.00)$      & $(0.00)$     & $(0.00)$    \\
+repress.decay     &               & $-0.21$       & $-0.19$      & $-0.27$       & $-0.15$      & $0.03$      \\
+                  &               & $(0.24)$      & $(0.26)$     & $(0.26)$      & $(0.33)$     & $(0.42)$    \\
+polity2.lag.1     &               &               & $-0.01$      & $-0.02$       & $-0.15^{**}$ & $0.10^{**}$ \\
+                  &               &               & $(0.03)$     & $(0.03)$      & $(0.05)$     & $(0.04)$    \\
+log(rgdppc.lag.1) &               &               & $-0.49^{**}$ & $-0.58^{**}$  & $-0.62^{*}$  & $-0.25$     \\
+                  &               &               & $(0.19)$     & $(0.19)$      & $(0.26)$     & $(0.29)$    \\
+log(wdi.pop)      &               &               & $-0.35^{**}$ & $-0.38^{***}$ & $-0.32^{*}$  & $-0.33$     \\
+                  &               &               & $(0.11)$     & $(0.12)$      & $(0.16)$     & $(0.17)$    \\
+wdi.urbpop.lag.1  &               &               & $0.02$       & $0.02^{*}$    & $0.03^{*}$   & $0.01$      \\
+                  &               &               & $(0.01)$     & $(0.01)$      & $(0.02)$     & $(0.02)$    \\
+npart.decay       &               &               &              & $0.33^{**}$   &              &             \\
+                  &               &               &              & $(0.11)$      &              &             \\
+\hline
+AIC               & 1022.99       & 1022.42       & 894.75       & 888.12        & 501.18       & 461.44      \\
+BIC               & 1040.43       & 1100.89       & 1006.27      & 1008.22       & 612.70       & 572.97      \\
+Log Likelihood    & -509.49       & -502.21       & -434.37      & -430.06       & -237.59      & -217.72     \\
+Deviance          & 1018.99       & 1004.42       & 868.75       & 860.12        & 475.18       & 435.44      \\
+Num. obs.         & 45240         & 45240         & 39293        & 39293         & 39293        & 39293       \\
+\hline
+\multicolumn{7}{l}{\scriptsize{$^{***}p<0.001$, $^{**}p<0.01$, $^*p<0.05$}}
+\end{tabular}
+\caption{Statistical models}
+\label{table:coefficients}
+\end{center}
+\end{table}
+
+
+Table 3 shows that general strikes have positive, statistically significant effect on the probability of regime transitions, in Africa, from 1990-2012. Like in the sample of NAVCO cases, we also see that part of this effect is independent of the size of participation, but part of it is also explained by participation. These effects also appear to be independent of other plausible correlates, mostly related to political and economic modernization. Additionally, when we disaggregate transitions into 'negative' and 'positive' transitions, general strikes have a powerful effect on  the probability of regime transitions towards democracy, and a weak, negative effect on more negative transitions (i.e to autocracy, state failure or 'state demise'). Interestingly, we also find that limited strikes have a positive effect on 'negative' regime transitions. This suggests that it is not the action of striking that produces positive effects in terms of participation, but the diversity and size of movements that tend to involve substantial labor participation.  
+
+
+
+
+**Figure 6: Marginal Effects of General Strikes on Regime Transitions, Africa, 1990-2012**
+
+
+
+``` {r, echo=FALSE}
+plot(scad.sim)
+```
+
+Figure 6 suggests that there is a substantial difference between the probability of regime transition in Africa in situations where a general strike has recently occurred, as opposed to when it has not. Furthermore, the probability of democratic regime transitions appears to be higher in these circumstances, when compared with situations where no general strikes have occurred. On average, the probability of regime transition on any given campaign day without a recent general strike is very low, just `r scad.sim2$stats$"Expected Values: E(Y|X)"[1,1]`. During an ongoing general strike, this rises to  `r scad.sim2$stats$"Expected Values: E(Y|X1)"[1,1]`. The probability of a democratic transition is lower. In a highly autocratic state, without a recent general strike, this probability is `r demtrans.sim2$stats$"Expected Values: E(Y|X)"[1,1]`, rising to `r demtrans.sim2$stats$"Expected Values: E(Y|X1)"[1,1]` during an ongoing general strike. 
+
+
+
+
+**Figure 7: Marginal Effects of General Strikes on Democratic Regime Transitions, Africa, 1990-2012**
+
+``` {r, echo=FALSE}
+plot(demtrans.sim)
+```
+
+
